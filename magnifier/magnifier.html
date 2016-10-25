@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+       .small{
+           width:200px;
+           height:200px;
+           position: absolute;
+           top:100px;
+           left:0;
+       }
+        .flim{
+            position: absolute;
+            top:0 ;
+            left:0;
+        }
+        .float{
+            width:50px;
+            height: 50px;
+            position: relative;
+            top:0;
+            left:0;
+            background: pink;
+            opacity:0.5;
+            display: none;
+        }
+        .big{
+            position: absolute;
+            left: 0;
+            top:0;
+            display: none;
+
+        }
+    </style>
+</head>
+<body>
+        <div class="small">
+            <img src="images/clothes_small.jpg" alt="">
+
+        </div>
+        <div class="flim">
+            <div class="float"></div>
+        </div>
+        <div class="big"></div>
+    <script src="js/jquery-1.12.1.js"></script>
+   <!--// <script src="js/magnifier.js"></script>-->
+    <!--<script>-->
+        <!--magnifier.init($("div")[0],"images/clothes.jpg")-->
+    <!--</script>-->
+        <script>
+            window.onload=function(){
+                var num=5;
+                var src="images/clothes.jpg";
+                $(".flim").css({
+                    width:$(".small").width(),
+                    height:$(".small").height(),
+                    left:$(".small").offset().left,
+                    top:$(".small").offset().top,
+                    zIndex:1
+                });
+                $(".big").css({
+                    width:$(".float").width()*num,
+                    height:$(".float").height()*num,
+                    left:$(".small").offset().left+$(".small").width(),
+                    top:$(".small").offset().top,
+                    background: "url(images/clothes.jpg) no-repeat 0 0",
+                    backgroundSize:$(".small").width()*num+"px "+$(".small").height()*num+"px",
+                });
+
+                $(".flim").hover(function(event){
+                    $(".float").show();
+                    $(".big").show();
+
+                },function(event){
+                    $(".float").hide();
+                    $(".big").hide();
+                }).mousemove(function(event){
+                    var left=event.clientX-$(".float").width()/2;
+                    var top =event.clientY-$(".float").height()/2;
+
+                    if(left<=$(".flim").offset().left)
+                    {
+                        left=$(".flim").offset().left;
+                    }
+                    if(left>=$(".flim").offset().left+$(".flim").width()-$(".float").width())
+                    {
+                        left=$(".flim").offset().left+$(".flim").width()-$(".float").width();
+                    }
+                    if(top<=$(".flim").offset().top)
+                    {
+                        top=$(".flim").offset().top;
+                    }
+                    if(top>=$(".flim").offset().top+$(".flim").height()-$(".float").height())
+                    {
+                        top=$(".flim").offset().top+$(".flim").height()-$(".float").height();
+                    }
+                    left=left-$(".flim").offset().left;
+                    top=top-$(".flim").offset().top;
+                    $(".float").css({
+                        left:left,
+                        top:top
+                    })
+                    $(".big").css("background-position",(-num)*left+"px "+(-num)*top+"px")
+                })
+            }
+
+        </script>
+</body>
+</html>

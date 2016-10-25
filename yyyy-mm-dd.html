@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title></title>
+		<script type="text/javascript">
+		//方法一:兼容IE6
+//			function add(s){
+//				return ("0"+s).slice(-2);//字符串和数值做加法后,结果是字符串类型,"0" + 5 = "05"
+//			}
+//			var now = new Date();
+//			var date = now.getFullYear()+"-"+now.getMonth()+"-"+now.getDate();
+//			date += " ";
+//			date += add(now.getHours())+":"+add(now.getMinutes())+":"+add(now.getSeconds());
+//			console.log(date);
+//			//console.log(("0"+now.getHours()).slice(-2));
+			
+			
+			//方法二:高逼格写法,兼容IE6
+//			var now = new Date();
+//			var date = [
+//						[now.getFullYear(),now.getMonth()+1,now.getDate()].join("-"),
+//						[now.getHours(),now.getMinutes(),now.getSeconds()].join(":")
+//						].join(" ").replace(/(?=\b\d\b)/g,"0");		//正则补零
+//			alert(date);
+			
+			
+			//方法三:适合IE9以上版本的现代浏览器
+			var now = new Date();
+			 //返回本地时间与格林威治标准时间(GMT)的分钟差getTimezoneOffset()
+			now.setMinutes(now.getMinutes()-now.getTimezoneOffset());  
+			var date = now.toISOString().slice(0,-5).replace(/[T]/g,"");
+			alert(date);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

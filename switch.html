@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title></title>
+		<script type="text/javascript">
+		
+			var now = new Date();
+			var year = now.getFullYear();
+			var month = now.getMonth();
+			var odate = now.getDate();
+			var hour = now.getHours();
+			var minu = now.getMinutes();
+			var sec = now.getSeconds();
+			var day = now.getDay();
+			document.write( year + "-"+ month+"-"+odate+" "+hour+":"+minu+":"+sec +"<br />");
+			switch(day){
+				case 0:document.write("今天是星期天,尽情睡吧!");break;
+				case 1:document.write("今天是星期一,好好工作哦!");break;
+				case 2:document.write("今天是星期二,继续加油哦!");break;
+				case 3:document.write("今天是星期三,这周已过半!");break;
+				case 4:document.write("今天是星期四,马山又要考试啦!");break;
+				case 5:document.write("今天是星期五,马上放假喽!");break;
+				case 6:document.write("今天是星期六,好好工作哦!");break;
+				default:document.write("今天是世界末日");break;
+			}
+		</script>
+	</head>
+	
+	<body>
+	</body>
+</html>

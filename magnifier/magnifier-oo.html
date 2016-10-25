@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .small{
+            width:200px;
+            height:200px;
+            position: absolute;
+            top:1000px;
+            left:0;
+        }
+        .mask{
+            position: absolute;
+            top:0 ;
+            left:0;
+        }
+        .float{
+            width:50px;
+            height: 50px;
+            position: absolute;
+            top:0;
+            left:0;
+            background: pink;
+            opacity:0.5;
+            display: none;
+        }
+        .big{
+            position: absolute;
+            left: 0;
+            top:0;
+            display: none;
+
+        }
+    </style>
+</head>
+<body>
+<div class="small">
+    <img src="images/clothes_small.jpg" alt="">
+
+</div>
+<div class="flim">
+    <div class="float"></div>
+</div>
+<div class="big"></div>
+<script src="js/jquery-1.12.1.js"></script>
+<script src="js/magnifier.js"></script>
+<script>
+    Magnifier.init($("div")[0],"images/clothes.jpg",10);
+</script>
+
+</body>
+</html>

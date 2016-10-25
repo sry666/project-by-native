@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		#search{
+			width:500px;
+			height:50px;
+			line-height: 50px;
+			font-size: 40px;
+			float:left;
+		}
+		#div{		
+			position: absolute;	
+			left:300px;
+			top:100px;
+		}
+		#baidu{
+			display: inline-block;
+			width:200px;
+			height:54px;
+			line-height: 54px;
+			font-size: 30px;
+			background: #3385ff;
+			float:left;
+			text-decoration: none;
+			color:white;
+			text-align: center;
+		}
+		ul li{
+			list-style: none;
+			height: 30px;
+			line-height: 30px;
+			font-size: 18px;
+			cursor: pointer;
+		}
+		#show{
+			width:502px;
+			position: absolute;
+			top:153px;
+			left:300px;
+			border:1px solid gray;
+			border-top: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="show"></div>
+	<div id="div">
+		<input type="text" id="search" >
+		<a href="#" id="baidu">百度一下</a>
+	</div>
+	<script type="text/javascript">
+		function getData(data){
+			var showDiv = document.getElementById('show');//显示搜索词条div
+			var script = document.getElementById('import');//导入的js
+			script.parentNode.removeChild(script);//移除导入的js
+			var ul = document.createElement('ul');//创建一个ul
+
+			showDiv.innerHTML = "";//每次调用函数先把显示内容清空
+			for(var i=0;i<data.s.length;i++){//循环导入src里面的词条
+				var li = document.createElement('li');//动态创建li
+
+				li.innerHTML = data.s[i];//li的内容是src里的s
+				ul.appendChild(li);
+			}
+
+			show.appendChild(ul);
+			//给每个词条li加点击事件
+			var aLi = document.getElementsByTagName('li');
+			for(var i=0;i<aLi.length;i++){
+				aLi[i].onclick = function () {
+					//location.href = "https://www.baidu.com/s?wd="+this.innerHTML;
+					// 新窗口打开链接
+					window.open("https://www.baidu.com/s?wd="+this.innerHTML);
+				}
+			}
+		}
+
+
+
+		window.onload = function(){
+			var search = document.getElementById('search');//获取搜索框
+			var baidu = document.getElementById("baidu");
+
+			baidu.onclick = function () {
+				// location.href = "https://www.baidu.com/s?wd="+search.value;
+				// 新窗口打开
+				window.open("https://www.baidu.com/s?wd="+search.value);
+			}
+			search.onkeyup = function(){//每次键盘抬起获取输入框内容
+
+				var val = search.value;
+				var script = document.createElement('script');
+				script.src = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=" + val + "&cb=getData";
+				//引入js地址,cb=此处函数名字可以随便取，与自己定义的函数名相同即可
+				script.id = 'import';
+				document.body.appendChild(script);//把script加入到页面中
+			}
+		}
+	</script>
+</body>
+</html>

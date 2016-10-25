@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title></title>
+		<script type="text/javascript">
+		window.onload = function(){
+			var btns = document.getElementsByTagName("button");
+			var lis = document.getElementsByTagName("li");
+			btns[0].onclick = function(){
+				for(var i =0;i<lis.length;i++){
+					lis[i].style.backgroundColor ="rgb("+parseInt( Math.random()*256)+","+parseInt( Math.random()*256)+","+parseInt( Math.random()*256)+")";
+				}
+			};
+			btns[1].onclick = function(){
+				for(var i = 0;i<lis.length;i++){
+					if(i%2==0){
+						lis[i].style.backgroundColor = "green";
+					}else{
+						lis[i].style.backgroundColor = "red";
+					}
+				}
+			};
+			btns[2].onclick = function(){
+				lis[8].style.backgroundColor = lis[0].style.backgroundColor = "rgb("+parseInt( Math.random()*256)+","+parseInt( Math.random()*256)+","+parseInt( Math.random()*256)+")";
+				for(var i =1;i<lis.length-1;i++){
+					lis[i].style.backgroundColor ="rgb("+parseInt( Math.random()*256)+","+parseInt( Math.random()*256)+","+parseInt( Math.random()*256)+")";
+				}
+			}
+		};
+		</script>
+	</head>
+	<body>
+		<button>各行变色</button>
+		<button>红绿相间</button>
+		<button>头尾同色</button>
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>拖拽</title>
+</head>
+<body>
+    <script>
+        //创建一个DIV
+        var odiv = document.createElement("div");
+        odiv.className = "DraggleDiv";
+        odiv.style.backgroundColor  = "red";
+        odiv.style.width = "300px";
+        odiv.style.height = "300px";
+        odiv.style.position = "absolute";
+        odiv.style.left = "0px";
+        odiv.style.top = "0px";
+        document.body.appendChild(odiv);
+        //使可以拖拽
+        odiv.onmousedown = function (evt){
+            var evt = evt || window.event;
+            var downClientX = evt.clientX;
+            var downClientY = evt.clientY;
+            var downLeft = odiv.offsetLeft;
+            var downTop = odiv.offsetTop;
+
+            document.onmousemove = function(evt){
+                var evt = evt || window.event;
+                var moveLeft = evt.clientX - downClientX;
+                var moveTop = evt.clientY - downClientY;
+                odiv.style.left = moveLeft + downLeft + "px";
+                odiv.style.top = moveTop + downTop + "px";
+            };
+            document.onmouseup = function(){
+                document.onmousemove = "";
+                document.onmouseup = "";
+            };
+        };
+       
+    </script>
+</body>
+</html>

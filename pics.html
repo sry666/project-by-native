@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title></title>
+		<style type="text/css">
+			img{width:500px;height:400px;}
+			button{position:absolute;}
+			#div1{position:absolute;left:0;top:0;}
+			.btn1{position:absolute;left:50px;top:350px;}
+			.btn2{position:absolute;left:80px;top:350px;}
+			.btn3{position:absolute;left:110px;top:350px;}
+			.btn4{position:absolute;left:140px;top:350px;}
+			.btn5{position:absolute;left:170px;top:350px;}
+			.btn6{position:absolute;left:200px;top:350px;}
+			.btn7{position:absolute;left:230px;top:350px;}
+			.btn8{position:absolute;left:260px;top:350px;}
+		</style>
+		<script type="text/javascript">
+		window.onload = function(){
+			var myImg = document.getElementsByTagName("img")[0];
+			var myBtns = document.getElementsByTagName("button");
+			var index =1;
+			var timer;
+			for(var i =0; i < myBtns.length;i++){
+				myBtns[i].onclick = function(){
+					myImg.src = "imgs/" + this.innerHTML +".jpg"; 
+					clearInterval(timer);
+				};
+				
+			}
+			function show(){
+				index ++;
+				if(index == 9 ){
+				index = 1;
+				}
+				myImg.src = "imgs/"+ index+".jpg";
+			}
+			
+			timer = setInterval(show,1000);
+			myImg.onmouseover = function(){
+				clearInterval(timer);
+			};
+			myImg.onmouseout = function(){
+				timer = setInterval(show,1000);
+			};
+		};
+		</script>
+	</head>
+	<body>
+		<div id = "div1">
+			<img src="imgs/1.jpg">
+		</div>
+		<div id = "div2">
+			<button class="btn1">1</button>
+			<button class="btn2">2</button>
+			<button class="btn3">3</button>
+			<button class="btn4">4</button>
+			<button class="btn5">5</button>
+			<button class="btn6">6</button>
+			<button class="btn7">7</button>
+			<button class="btn8">8</button>
+		</div>
+	</body>
+</html>

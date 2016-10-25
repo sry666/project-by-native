@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>同意按钮倒计时</title>
+    <script>
+        var time = 5;
+        var id = null;
+        function daojishi(){
+            var btn = document.getElementById("btnGreet");
+            btn.value = "同意（"+time+"）";
+
+            if(time==0){
+                clearInterval(id);
+                var btn = document.getElementById("btnGreet");
+                btn.value="同意";
+                btn.disabled = false;
+            }
+             time--;
+
+        }
+
+        window.onload = function(){
+
+            id= setInterval(daojishi, 1000);
+            console.log(time);
+
+
+
+
+        };
+    </script>
+</head>
+<body>
+<input type ="button" value="" id="btnGreet" disabled="disabled" />
+</body>
+</html>

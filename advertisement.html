@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>shipinguanggao</title>
+		<style>
+			#div1{width:200px;height:200px;background:pink;position:absolute;left:50%;top:50%;margin-top:-100px;margin-left:-100px;}
+			#adv{display:block;width:100px;height:100px;}
+		</style>
+		<script>
+			window.onload = function(){
+				var spanAdv = document.getElementById("adv");
+				var div1 = document.getElementById("div1");
+				var myJump = document.getElementById("jump");
+				var timer = setInterval(function(){
+					spanAdv.innerHTML = parseInt(spanAdv.innerHTML)-1;
+					if(spanAdv.innerHTML == "0"){
+						window.location.href = "day8/image/plain.png";
+						clearInterval(timer);
+					}
+				},1000);
+				myJump.onclick = function(){
+					div1.style.display = "none";
+					clearInterval(timer);
+				};
+			};
+		</script>
+	</head>
+	<body>
+		<div id = "div1">
+			<span id = "adv">5</span>
+			<a href = "#" id = "jump">如果登录不成功,请点此关闭</a>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>制作数字时钟，并动起来</title>
+		<style>
+			#time img{width:100px;height:100px;}
+			#time h1{
+				display:inline-block;
+				width:100px;
+				height:100px;
+				line-height:100px;
+				margin:0;
+				vertical-align: top;
+				font-size:70px;
+				color:darkred;
+			}
+		</style>
+		<script>
+		function magicShow(){
+				var now = new Date();
+				var hour = now.getHours();
+				var minu = now.getMinutes();
+				var sec = now.getSeconds();
+				hour = hour < 10 ? ("0"+hour) :( ""+ hour);
+				minu = minu < 10 ? ("0"+minu ):( ""+ minu);
+				sec = sec < 10 ? ("0"+sec) :( ""+ sec);
+				
+				var str = hour +  minu + sec;
+				console.log(str);
+				var imgs = document.getElementsByTagName("img");
+				for(var i = 0; i < imgs.length; i++){
+					imgs[i].src = "img/"+str[i]+".png";
+				}
+			
+		}	
+		setInterval(magicShow,500);
+		</script>
+	</head>
+	<body>
+		<div id= "time">
+			<img src ="img/0.png" id = "img0">
+			<img src ="img/0.png" id = "img1">
+			<h1>:</h1>
+			<img src ="img/0.png" id = "img2">
+			<img src ="img/0.png" id = "img3">
+			<h1>:</h1>
+			<img src ="img/0.png" id = "img4">
+			<img src ="img/0.png" id = "img5">
+			
+		</div>
+	</body>
+</html>
