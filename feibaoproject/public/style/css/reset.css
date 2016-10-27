@@ -1,0 +1,64 @@
+@charset 'utf-8';
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input{
+margin:0;
+padding:0;
+}
+body{
+	font-size:12px;
+}
+img{
+	border:none;
+	display:block;
+}
+li{
+	list-style:none;
+}
+input,select,textarea,button{
+	outline:none;
+	border:none;
+	background:none;
+}
+textarea{
+	resize:none;
+}
+i{
+	font-style:normal;
+}
+
+a{
+	text-decoration:none;
+	color:#696969;
+	font-size:12px;
+	text-align: center;
+}
+a:hover{
+	color: #d70c65;
+	text-decoration:underline;
+}
+input{
+	border:none;
+}
+b{
+	font-weight:normal;
+}
+/*高度塌陷*/
+.clearfix:after{content:"";display:block;clear:both;}
+/*------contentWidth--------*/
+.comWidth{
+	width:1200px;
+	margin:0 auto;
+	height:30px;
+	line-height:30px;
+}
+.hide{
+	display:none;
+}
+.show{
+	display:block;
+}
+.focus{
+	background:hotpink;
+	}
+.clear{
+	clear:both;
+}

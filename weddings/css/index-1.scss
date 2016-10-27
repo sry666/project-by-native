@@ -1,0 +1,213 @@
+html,body{
+    padding:0;
+    margin:0;
+    border:0;
+}
+a{
+    text-decoration:none;
+}
+nav{
+    width:100%;
+    height:7.5rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow:row wrap;
+    div{
+        display:inline-flex;
+        justify-content: center;
+        align-items: center;
+        height:2.5rem;
+        border-left:1px solid #ccc;
+        a{
+            font-family:cursive;
+            font-size:0.7rem;
+            text-align:center;
+            color:#000;
+        } 
+        a:hover{
+            color:cornflowerblue;
+            text-decoration: underline;
+        }
+    }
+    .col:nth-of-type(2){
+        a{
+            color: cornflowerblue; 
+        }
+        a:before{
+            content:"\00AB";
+            padding-left:3px;
+            font-size:0.3rem;
+            
+        }
+        a:after{
+            content:"\00BB";
+            font-size:0.3rem;
+            padding-right:3px;
+        }
+    }
+    .wed{
+        border:none;
+    }
+    .title{
+        width:100%;
+        height:4rem;
+        display:inline-flex;
+        justify-content: center;
+        align-items:center;
+        padding-top:5px;
+        border:none;
+        a{
+            height:100%;
+            text-decoration: none;
+            display:inline-block;
+            img{
+                width:100%;
+                height:90%;
+            } 
+        }
+    } 
+}
+.container{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    overflow-y:auto;
+    flex-flow:row wrap;
+    .carousel{
+        height:10.5rem;
+        display:inline-flex;
+        justify-content: center;
+        align-items: center;
+        a{
+            height:100%;
+            display:inline-block;
+            img{
+                width:100%;
+                height:100%;
+            }
+        }
+    }
+    .brand{
+        display:flex;
+        padding-top:0.4rem;
+        flex-flow:row wrap;
+        justify-content: center;
+        align-items: center;
+        div{
+            width:auto;
+            height:1.6rem;
+            margin-bottom:5px;
+            display:flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+            a{
+                height:1rem;
+                margin-right:1rem;
+                text-align:center;
+                display:inline-block;
+            }
+        }
+        .letter{
+            a{
+                font-size:0.7rem;
+                color:#9D9D9D;
+                font-family:Lato, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            }
+        }
+    }
+    section{
+        width:100%;
+        margin-top:1rem;
+        justify-content: center;
+        align-items: center;
+        display:flex;
+        flex-flow:row nowrap;
+        artical{
+            width:auto;
+            display:inline-flex;
+            justify-content: space-around;
+            flex-direction: column;
+            h1{
+                text-align:center;
+                font-size:1rem;
+                font-family:cursive;
+            }
+            p{
+                text-align:justify;
+                padding:0.5rem;
+                line-height: 22px;
+                color: #888888;
+                font-size:0.8rem;
+                font-family:Lato, "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+            }
+            p:before{
+                content: '\25CA';
+                padding-right: 4px;
+            }
+            p:after{
+                content: '\00B6';
+                padding-left: 4px;
+            }
+        }
+    }
+}
+footer{
+    width:100%;
+    height:10rem;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow:column wrap;
+    background:url(../img/bkg-footer.png) repeat-x left top;
+    
+    .top{
+        height:2.5rem;
+        display:inline-flex;
+        justify-content: space-around;
+        align-items: center;
+        padding-top:25px;
+        background:url(../img/diamond.png) no-repeat top center;
+        a{
+            height:100%;
+            text-align:center;
+            span{
+               color:cornflowerblue; 
+            }
+        }
+    }
+    .center{
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        height:3rem;
+        background:url(../img/deco-footer.png) no-repeat center;
+        span{
+            padding-top:2rem;
+            width:50%;
+            height:100%;
+            text-align:center;
+            display:inline-block;
+            font-size:0.7rem;
+        }   
+    }
+    .bottom{
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        height:3rem;
+        flex-flow:row wrap;
+        span{
+            text-align:center;
+            height:1rem;
+            font-size:0.6rem;
+            background:url(../img/bkg-footer.png) repeat-x left top;
+            a:hover{
+                border-bottom:1px dotted dodgerblue;
+            } 
+        }
+        
+    }
+}

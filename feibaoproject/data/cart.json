@@ -1,0 +1,26 @@
+[
+    {
+        "user": "aaaaaaa",
+        "id": "num",
+        "name": "中国台湾麻豆文旦 50箱原箱装",
+        "src": "http://localhost:9999/imgs/product-detail-smallImg1.jpg",
+        "price": "680",
+        "count": 10
+    },
+    {
+        "user": "dsafas",
+        "id": "num",
+        "name": "中国台湾麻豆文旦 50箱原箱装",
+        "src": "http://localhost:9999/imgs/product-detail-smallImg1.jpg",
+        "price": "680",
+        "count": 10
+    },
+    {
+        "user": "yyyyyyy",
+        "id": "num",
+        "name": "中国台湾麻豆文旦 50箱原箱装",
+        "src": "http://localhost:9999/imgs/product-detail-smallImg1.jpg",
+        "price": "680",
+        "count": 15
+    }
+]
